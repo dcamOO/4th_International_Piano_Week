@@ -13,7 +13,7 @@
             --color-secondary: #fee7c0;
             --font-heading: 'Playfair Display', serif;
             --font-body: 'Lato', sans-serif;
-            --nav-height: 70px;
+            --nav-height: 100px;
         }
 
         /* STICKY FOOTER SETUP */
@@ -36,8 +36,26 @@
             padding: 0 5%;
             border-bottom: 2px solid var(--color-secondary);
         }
+        .logo {
+            display: flex;
 
-        .logo { color: var(--color-secondary); font-family: var(--font-heading); font-size: 1.5rem; font-weight: bold; }
+            align-items: center;
+            height: 100%;
+
+            font-family: var(--font-heading);
+            color: var(--color-secondary);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .logo img{
+            height: var(--nav-height);
+            width: auto;
+            padding: 3px;
+            object-fit: contain;
+        }
+
+
         .back-link { color: var(--color-secondary); text-decoration: none; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; }
 
         /* CONTENT WRAPPER */
@@ -79,14 +97,16 @@
 <body>
 
     <nav>
-        <div class="logo">Symphony Gala</div>
+        <div class="logo">
+            <img src="content/logo.png" alt="International Piano Week Logo">
+        </div>
         <a href="index.html" class="back-link">← Back to Event</a>
     </nav>
 
     <section class="bio-wrapper" id="bio-container"></section>
 
     <footer>
-        <p>&copy; 2025 Symphony Events Organization</p>
+        <p>&copy; 2025 International Piano Week</p>
     </footer>
 
     <script src="data.js"></script>

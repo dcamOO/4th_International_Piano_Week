@@ -331,18 +331,28 @@
             gap: 30px;
             flex-wrap: wrap;
             margin-top: 50px;
+
+            align-items: stretch;
         }
 
         .pricing-card {
             background: var(--color-white);
             padding: 40px;
-            width: 300px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            width: 300px; /* Or min-width, depending on your layout */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             text-align: center;
-            border: 1px solid #eee;
+            border-top: 5px solid transparent; /* Or your border logic */
             transition: 0.3s;
-            position: relative;
-            overflow: hidden;
+            
+            /* NEW FLEXBOX RULES FOR ALIGNMENT */
+            display: flex;
+            flex-direction: column;
+            height: 100%; /* Forces card to fill the grid row height */
+        }
+
+        .pricing-card .btn {
+            margin-top: auto; /* Pushes the button to the bottom */
+            align-self: center; /* Ensures the button stays centered horizontally */
         }
 
         /* Gold bar on top */
@@ -461,7 +471,7 @@
             <li><a href="#teachers">Faculty</a></li>
             <li><a href="#gallery">Past Events</a></li>
             <li><a href="#pricing">Tuition</a></li>
-            <li><a href="#hero" style="border: 1px solid var(--color-secondary); padding: 8px 20px; border-radius: 2px;">Apply Now</a></li>
+            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSc21gQMXMUmfea6vrv1HEYFkU52flwSANldh4ivQP2N2BuvaA/viewform?usp=header" style="border: 1px solid var(--color-secondary); padding: 8px 20px; border-radius: 2px;">Apply Now</a></li>
         </ul>
     </nav>
 
@@ -471,7 +481,7 @@
 
             <h2 class="section-title" style="color: var(--color-secondary);">July 26th - August 1st</h2>
             <h2 style="color: var(--color-secondary); padding-bottom: 20px;">Cushing Academy, Ashburnham MA</h2>
-            <a href="https://docs.google.com/forms/d/1QBKMnWxiN3CfnHZGIoLoZBGoMNflohLFcfYlra7uXhg/edit?ts=6935a4bc" target="_blank" class="btn">Apply Now</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSc21gQMXMUmfea6vrv1HEYFkU52flwSANldh4ivQP2N2BuvaA/viewform?usp=header" target="_blank" class="btn">Apply Now</a>
         </div>
     </section>
 
@@ -560,7 +570,6 @@
         </div>
     </section>
 
-    
     <section id="pricing" class="section-padding">
         <div class="container">
             <h2 class="section-title">Tuition & Registration</h2>
@@ -572,62 +581,72 @@
             </div>
 
             <div class="pricing-grid">
-                <div class="pricing-card featured" style="transform: scale(1.05); border: 2px solid var(--color-primary); z-index: 2;">
-                    <div style="background: var(--color-secondary); color: var(--color-primary); padding: 5px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 15px;">
-                        Best Value
-                    </div>
-                    <h3>Boarding Student</h3>
+                
+
+                <div class="pricing-card">
+                    <h3>Boarding (Early)</h3>
                     <div class="price">$2,000</div>
                     <p style="color: var(--color-primary); font-weight: bold; margin-bottom: 15px;">
-                        Until Jan 31, 2026
+                        Register by Jan 31
                     </p>
                     <ul class="features-list">
+                        <li>Instruction</li>
+                        <li>Accomodation</li>
+                        <li>Meals</li>
+                        <li>Practice</li>
+                        <li>Cultural Access</li>
+                        <li>Transportation</li>
                     </ul>
                     <br>
-                    <a href="#" class="btn">Register Now</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc21gQMXMUmfea6vrv1HEYFkU52flwSANldh4ivQP2N2BuvaA/viewform?usp=header" class="btn">Register Now</a>
                 </div>
+
+
+                <div class="pricing-card">
+                    <h3>Boarding (Regular)</h3>
+                    <div class="price">$2,200</div>
+                    <p style="color: #666; font-weight: bold; margin-bottom: 15px;">
+                        Feb 1 - Apr 30
+                    </p>
+                    <ul class="features-list">
+                        <li>Instruction</li>
+                        <li>Accomodation</li>
+                        <li>Meals</li>
+                        <li>Practice</li>
+                        <li>Cultural Access</li>
+                        <li>Transportation</li>
+                    </ul>
+                    <br>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc21gQMXMUmfea6vrv1HEYFkU52flwSANldh4ivQP2N2BuvaA/viewform?usp=header" class="btn" style="background: transparent; color: var(--color-primary); border: 1px solid var(--color-primary);">Select</a>
+                </div>
+
 
                 <div class="pricing-card">
                     <h3>Day Student</h3>
-                    <div class="price">$2,200</div>
-                    <p style="color: #666; font-weight: bold; margin-bottom: 15px;">
-                        Until Apr 30, 2026
-                    </p>
+                    <div class="price">$1,100</div>
                     <ul class="features-list">
-                        <li>Full Tuition Coverage</li>
-                        <li>Standard Housing</li>
-                        <li>Digital Materials</li>
+                        <li>Instruction</li>
+                        <li>Practice</li>
+                        <li>Cultural Access</li>
+                        <li>Transportation</li>
                     </ul>
                     <br>
-                    <a href="#" class="btn" style="background: transparent; color: var(--color-primary); border: 1px solid var(--color-primary);">Select</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc21gQMXMUmfea6vrv1HEYFkU52flwSANldh4ivQP2N2BuvaA/viewform?usp=header" class="btn" style="background: transparent; color: var(--color-primary); border: 1px solid var(--color-primary);">Select</a>
                 </div>
 
-                <div class="pricing-card">
-                    <h3>Late Registration</h3>
-                    <div class="price">$2,200</div>
-                    <p style="color: #666; font-weight: bold; margin-bottom: 15px;">
-                        Until May 30, 2026
-                    </p>
-                    <ul class="features-list">
-                        <li>Subject to Availability</li>
-                        <li>Final Deadline</li>
-                    </ul>
-                    <br>
-                    <a href="#" class="btn" style="background: transparent; color: var(--color-primary); border: 1px solid var(--color-primary);">Select</a>
-                </div>
             </div>
 
             <div style="margin-top: 80px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
                 
                 <div style="background: #fff; padding: 30px; border-left: 4px solid var(--color-secondary); box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                    <h3 style="margin-bottom: 20px;">Tuition Includes</h3>
+                    <h3 style="margin-bottom: 20px;"></h3>
                     <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
-                        <li style="margin-bottom: 10px;">✓ <strong>Instruction:</strong> All workshops, masterclasses, and two private lessons.</li>
-                        <li style="margin-bottom: 10px;">✓ <strong>Accommodation:</strong> Furnished dormitory room, linens, and supplies.</li>
-                        <li style="margin-bottom: 10px;">✓ <strong>Meals:</strong> All daily meals included (excluding lunch on excursion day).</li>
-                        <li style="margin-bottom: 10px;">✓ <strong>Practice:</strong> Dedicated pianos available for a minimum of two hours daily.</li>
-                        <li style="margin-bottom: 10px;">✓ <strong>Cultural Access:</strong> Free entry to all concerts and Frederick's Historical Piano Museum.</li>
-                        <li style="margin-bottom: 10px;">✓ <strong>Transportation:</strong> Bus for all off-campus activities and excursions.</li>
+                        <li style="margin-bottom: 10px;"> <strong>Instruction:</strong> All workshops, masterclasses, and two private lessons.</li>
+                        <li style="margin-bottom: 10px;"> <strong>Accommodation:</strong> Furnished dormitory room (Boarding students only).</li>
+                        <li style="margin-bottom: 10px;"> <strong>Meals:</strong> All daily meals included (Day students exclude breakfast).</li>
+                        <li style="margin-bottom: 10px;"> <strong>Practice:</strong> Dedicated pianos available for a minimum of two hours daily.</li>
+                        <li style="margin-bottom: 10px;"> <strong>Cultural Access:</strong> Free entry to all concerts and Frederick's Historical Piano Museum.</li>
+                        <li style="margin-bottom: 10px;"> <strong>Transportation:</strong> Bus for all off-campus activities and excursions.</li>
                     </ul>
                 </div>
 
@@ -637,11 +656,11 @@
                         Registration is validated after payment confirmation. International participants should confirm participation before booking flights.
                     </p>
                     <div style="background: #f4f4f4; padding: 15px; border-radius: 4px; font-family: monospace; font-size: 0.9rem; color: #333;">
-                        <strong>Bank:</strong> Athol Savings Bank, USA <br>
-                        <strong>Account No:</strong> 971446547 <br>
-                        <strong>TAB No:</strong> 211370998 <br>
-                        <strong>Beneficiary:</strong> International Piano Week <br>
-                        <strong>Note:</strong> Include Participant's Name in transfer 
+                        <strong>Bank:</strong> Athol Savings Bank, USA<br>
+                        <strong>Account No:</strong> 971446547<br>
+                        <strong>TAB No:</strong> 211370998<br>
+                        <strong>Beneficiary:</strong> International Piano Week<br>
+                        <strong>Note:</strong> Include Participant's Name in transfer
                     </div>
                     <p style="margin-top: 15px; font-size: 0.85rem; color: #666;">
                         *Bank transfer fees (approx. $15) are the participant's responsibility. Full refund available if canceled due to insufficient enrollment.
@@ -649,23 +668,18 @@
                 </div>
             </div>
 
-            <div style="margin-top: 40px; text-align: center; color: #555;">
-                <p><strong>Planned Excursion:</strong> A full-day trip will be organized to a location such as Tanglewood, Groton Hill Music School, Boston historical sites, or Merrimack Premium Outlets. Destination determined by weather and participant preference.</p>
-            </div>
-
         </div>
     </section>
-    
 
     <footer>
         <div class="container">
             <div class="footer-content">
-                <h3>Symphony Gala 2025</h3>
-                <p>The Grand Opera House • Vienna</p>
-                <p>concierge@symphonygala.com | +43 1 987 6543</p>
+                <h3>International Piano Week</h3>
+                <p>Cushing Academy • Ashburnham, MA</p>
+                <p>m.godoytess@gmail.com</p>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Classical Arts Foundation. All rights reserved.</p>
+                <p>&copy; 2025 International Piano Week. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
